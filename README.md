@@ -1,12 +1,20 @@
-# NEXTWIRE Official Hub
+# NEXTWIRE One-Page Website
 
-صفحة واحدة جاهزة للرفع على GitHub Pages أو أي استضافة.
-
-## تعديل الروابط
-افتح ملف `script.js` وعدّل قيمة `url` لكل منصة.
+ملفات صفحة NEXTWIRE الجاهزة للرفع.
 
 ## الملفات
 - `index.html`
 - `style.css`
 - `script.js`
-- `assets/qr-nextwire.png`
+- `assets/`
+
+## تعديل الروابط لاحقًا
+كل روابط المنصات موجودة داخل ملف `script.js` في مصفوفة `platforms`.
+
+حاليًا الروابط موضوعة كـ `#` إلى أن يتم تزويد الروابط الرسمية.
+
+## QR Code
+تم توليد رمز QR مؤقتًا إلى:
+`https://gradifysa.com/`
+
+يمكن تغييره لاحقًا بسهولة.

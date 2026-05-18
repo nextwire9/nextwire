@@ -1,40 +1,103 @@
-const links = [
-  { key: "TT", title: "TikTok", ar: "تيك توك", url: "#", color: "linear-gradient(135deg,#050505,#20242b)" },
-  { key: "SC", title: "Snapchat", ar: "سناب شات", url: "#", color: "linear-gradient(135deg,#ffdf00,#ffd21d)" },
-  { key: "IG", title: "Instagram", ar: "إنستقرام", url: "#", color: "linear-gradient(135deg,#833ab4,#fd1d1d,#fcb045)" },
-  { key: "X", title: "X (Twitter)", ar: "إكس (تويتر)", url: "#", color: "linear-gradient(135deg,#000,#222)" },
-  { key: "f", title: "Facebook", ar: "فيسبوك", url: "#", color: "linear-gradient(135deg,#1877f2,#4aa3ff)" },
-  { key: "TG", title: "Telegram", ar: "تلغرام", url: "#", color: "linear-gradient(135deg,#229ed9,#5cc8ff)" },
-  { key: "▶", title: "YouTube", ar: "يوتيوب", url: "#", color: "linear-gradient(135deg,#ff0000,#ff4444)" },
-  { key: "✉", title: "Email", ar: "راسلنا", url: "mailto:contact@nextwire.dev", color: "linear-gradient(135deg,#061b3d,#0a2b5f)" }
-];
+const siteConfig = {
+  siteUrl: "https://gradifysa.com/",
+  domainLabel: "gradifysa.com",
+  platforms: [
+    {
+      name: "TikTok",
+      note: "محتوى تقني مختصر",
+      icon: "fa-brands fa-tiktok",
+      color: "linear-gradient(145deg, #020617, #111827)",
+      url: "#"
+    },
+    {
+      name: "Snapchat",
+      note: "لقطات وتجارب سريعة",
+      icon: "fa-brands fa-snapchat",
+      color: "linear-gradient(145deg, #facc15, #fef08a)",
+      darkIcon: true,
+      url: "#"
+    },
+    {
+      name: "Instagram",
+      note: "منشورات وملخصات مرئية",
+      icon: "fa-brands fa-instagram",
+      color: "linear-gradient(145deg, #f97316, #db2777 48%, #7c3aed)",
+      url: "#"
+    },
+    {
+      name: "X",
+      note: "أفكار وتحديثات قصيرة",
+      icon: "fa-brands fa-x-twitter",
+      color: "linear-gradient(145deg, #020617, #111827)",
+      url: "#"
+    },
+    {
+      name: "Facebook",
+      note: "محتوى ومشاركات عامة",
+      icon: "fa-brands fa-facebook-f",
+      color: "linear-gradient(145deg, #2563eb, #60a5fa)",
+      url: "#"
+    },
+    {
+      name: "Telegram",
+      note: "تنبيهات وروابط مباشرة",
+      icon: "fa-brands fa-telegram",
+      color: "linear-gradient(145deg, #0284c7, #67e8f9)",
+      url: "#"
+    },
+    {
+      name: "YouTube",
+      note: "شروحات ومقاطع مفيدة",
+      icon: "fa-brands fa-youtube",
+      color: "linear-gradient(145deg, #ef4444, #f87171)",
+      url: "#"
+    },
+    {
+      name: "Email",
+      note: "للتواصل والاستفسارات",
+      icon: "fa-regular fa-envelope",
+      color: "linear-gradient(145deg, #08224b, #1767cb)",
+      url: "#"
+    }
+  ]
+};
 
-const grid = document.getElementById("linksGrid");
-const footerIcons = document.getElementById("footerIcons");
+const platformGrid = document.getElementById("platformGrid");
+const miniLinks = document.getElementById("miniLinks");
+const domainLabel = document.getElementById("domainLabel");
+const yearNode = document.getElementById("year");
 
-links.forEach(link => {
-  const a = document.createElement("a");
-  a.className = "platform-card";
-  a.href = link.url;
-  if (!link.url.startsWith("mailto:")) {
-    a.target = "_blank";
-    a.rel = "noopener";
-  }
-  a.innerHTML = `
-    <div class="platform-icon" style="background:${link.color}">${link.key}</div>
-    <h3>${link.title}</h3>
-    <p>${link.ar}</p>
-    <strong>انتقل الآن ←</strong>
+domainLabel.textContent = siteConfig.domainLabel;
+yearNode.textContent = new Date().getFullYear();
+
+siteConfig.platforms.forEach((platform) => {
+  const card = document.createElement("a");
+  card.className = `platform-card ${platform.url === "#" ? "placeholder" : ""}`;
+  card.href = platform.url;
+  card.target = platform.url === "#" ? "_self" : "_blank";
+  card.rel = platform.url === "#" ? "" : "noopener noreferrer";
+  card.setAttribute("aria-label", platform.url === "#" ? `${platform.name} - الرابط سيضاف لاحقًا` : `زيارة ${platform.name}`);
+  card.innerHTML = `
+    <span class="platform-icon" style="--icon-bg: ${platform.color}; color: ${platform.darkIcon ? "#08224b" : "#fff"};">
+      <i class="${platform.icon}"></i>
+    </span>
+    <h3>${platform.name}</h3>
+    <p>${platform.note}</p>
+    <span class="visit">زيارة المنصة <i class="fa-solid fa-arrow-left"></i></span>
   `;
-  grid.appendChild(a);
+  platformGrid.appendChild(card);
 
-  const icon = document.createElement("a");
-  icon.href = link.url;
-  icon.title = link.title;
-  icon.textContent = link.key;
-  if (!link.url.startsWith("mailto:")) {
-    icon.target = "_blank";
-    icon.rel = "noopener";
-  }
-  footerIcons.appendChild(icon);
+  const mini = document.createElement("a");
+  mini.href = platform.url;
+  mini.target = platform.url === "#" ? "_self" : "_blank";
+  mini.rel = platform.url === "#" ? "" : "noopener noreferrer";
+  mini.className = platform.url === "#" ? "placeholder" : "";
+  mini.setAttribute("aria-label", platform.url === "#" ? `${platform.name} - الرابط سيضاف لاحقًا` : platform.name);
+  mini.innerHTML = `<i class="${platform.icon}"></i>`;
+  miniLinks.appendChild(mini);
+});
+
+// Keep placeholder clicks from jumping to top.
+document.querySelectorAll('a[href="#"]').forEach((link) => {
+  link.addEventListener("click", (event) => event.preventDefault());
 });

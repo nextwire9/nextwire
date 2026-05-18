@@ -1,99 +1,157 @@
 <!doctype html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>NEXTWIRE | المركز الرسمي</title>
-  <meta name="description" content="المركز الرسمي لجميع روابط وحسابات NEXTWIRE." />
-  <meta name="theme-color" content="#061b3d" />
-  <link rel="icon" href="assets/qr-nextwire.png" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="NEXTWIRE مساحة شخصية لمشاركة الخبرات والتجارب التقنية، مع استخدام الذكاء الاصطناعي لتبسيط المعلومة وتسهيل نقل الخبرة." />
+  <title>NEXTWIRE | روابط ومحتوى تقني</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Inter:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&family=Inter:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="bg-glow"></div>
-  <header class="site-header">
-    <button class="icon-button menu-button" aria-label="القائمة">
-      <span></span><span></span><span></span>
-    </button>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+  <div class="spark-grid" aria-hidden="true"></div>
 
-    <a class="brand" href="#top" aria-label="NEXTWIRE home">
-      <span class="brand-mark">NW</span>
-      <span class="brand-name">NEXT<span>WIRE</span></span>
+  <header class="site-header shell">
+    <a class="brand" href="#top" aria-label="NEXTWIRE">
+      <span class="brand-badge">
+        <img src="assets/brand-mark.svg" alt="" />
+      </span>
+      <span class="brand-word" dir="ltr">NEXTWIRE</span>
     </a>
 
     <div class="header-actions">
-      <button class="lang-btn" type="button">EN</button>
-      <button class="icon-button moon" type="button" aria-label="الوضع الليلي">◑</button>
+      <button class="mini-btn" type="button" aria-label="English version unavailable">EN</button>
+      <button class="mini-btn moon" type="button" aria-label="واجهة فاتحة ثابتة">
+        <i class="fa-solid fa-moon"></i>
+      </button>
     </div>
   </header>
 
   <main id="top">
-    <section class="hero section-wrap">
+    <section class="hero shell">
       <div class="hero-copy">
-        <p class="eyebrow">المركز الرسمي لجميع روابط وحسابات</p>
-        <h1>NEXTWIRE</h1>
-        <p class="lead">مصدر موثوق للمحتوى التقني، التحديثات، الأخبار، وأحدث التطورات في عالم التقنية والذكاء الاصطناعي.</p>
-        <div class="cta-row">
-          <a class="btn primary" href="#platforms">استكشف الروابط <span>↗</span></a>
-          <a class="btn ghost" href="https://t.me/" target="_blank" rel="noopener">تابع الأخبار <span>⌁</span></a>
+        <p class="eyebrow">مساحة شخصية للتقنية والمعرفة</p>
+        <h1 dir="ltr">NEXTWIRE</h1>
+        <p class="hero-text">
+          أشارك خبرات وتجارب وأدوات تقنية، وأستخدم الذكاء الاصطناعي لتبسيط المعلومة
+          وتسهيل نقل الخبرة بشكل أوضح وأقرب للجميع.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#platforms">
+            <i class="fa-solid fa-link"></i>
+            <span>تصفح الروابط</span>
+          </a>
+          <a class="btn btn-ghost" href="#about">
+            <i class="fa-regular fa-newspaper"></i>
+            <span>تعرف على الفكرة</span>
+          </a>
         </div>
       </div>
 
-      <div class="hero-logo" aria-hidden="true">
-        <div class="logo-orbit"></div>
-        <div class="nw-monogram">NW</div>
+      <div class="hero-visual">
+        <div class="flash-ring"></div>
+        <div class="art-frame">
+          <img class="hero-art" src="assets/nextwire-artwork.png" alt="تصميم بصري لهوية NEXTWIRE" />
+        </div>
       </div>
     </section>
 
-    <section class="trust-row section-wrap" aria-label="مميزات NEXTWIRE">
-      <div class="trust-item"><span>⚡</span><strong>سريع</strong><small>وصول مباشر</small></div>
-      <div class="trust-item"><span>◷</span><strong>محدث</strong><small>تحديث مستمر</small></div>
-      <div class="trust-item"><span>◇</span><strong>رسمي</strong><small>حسابات موثقة</small></div>
-      <div class="trust-item"><span>盾</span><strong>موثوق</strong><small>مصدر موثوق</small></div>
-    </section>
-
-    <section id="platforms" class="platforms section-wrap">
-      <div class="section-title">
-        <span></span>
-        <h2>منصات NEXTWIRE الرسمية</h2>
-        <span></span>
-      </div>
-
-      <div class="cards-grid" id="linksGrid"></div>
-    </section>
-
-    <section class="about section-wrap">
-      <div class="about-card">
-        <div class="about-icon">N</div>
+    <section class="value-strip shell" aria-label="ملامح NEXTWIRE">
+      <article class="value-card">
+        <span class="value-icon"><i class="fa-solid fa-graduation-cap"></i></span>
         <div>
-          <h2>عن NEXTWIRE</h2>
-          <p>NEXTWIRE هو مركز رقمي مستقل يجمع الروابط الرسمية ويقدم محتوى تقني موثوق بطريقة منظمة وسهلة الوصول.</p>
+          <h2>خبرات عملية</h2>
+          <p>تجارب حقيقية وملاحظات مفيدة.</p>
+        </div>
+      </article>
+      <article class="value-card">
+        <span class="value-icon"><i class="fa-regular fa-lightbulb"></i></span>
+        <div>
+          <h2>أفكار مبسطة</h2>
+          <p>شرح أوضح بعيدًا عن التعقيد.</p>
+        </div>
+      </article>
+      <article class="value-card">
+        <span class="value-icon"><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+        <div>
+          <h2>ذكاء اصطناعي</h2>
+          <p>أداة تساعد على نقل المعرفة بسلاسة.</p>
+        </div>
+      </article>
+      <article class="value-card">
+        <span class="value-icon"><i class="fa-solid fa-bolt"></i></span>
+        <div>
+          <h2>محتوى مباشر</h2>
+          <p>مختصر، مرتب، وقابل للتطبيق.</p>
+        </div>
+      </article>
+    </section>
+
+    <section id="platforms" class="platforms shell">
+      <div class="section-head">
+        <span></span>
+        <h2>تابع NEXTWIRE</h2>
+        <span></span>
+      </div>
+
+      <div class="platform-grid" id="platformGrid"></div>
+    </section>
+
+    <section id="about" class="about shell">
+      <div class="about-panel">
+        <div class="about-copy">
+          <p class="eyebrow">عن NEXTWIRE</p>
+          <h2>خبرات تقنية بأسلوب أخف وأوضح</h2>
+          <p>
+            NEXTWIRE مساحة شخصية أشارك فيها ما أتعلمه من تجارب وأفكار وأدوات تقنية.
+            أستفيد من الذكاء الاصطناعي في ترتيب الفكرة، تبسيط المعلومة، وصياغة المحتوى
+            بطريقة عملية وسهلة المتابعة.
+          </p>
+        </div>
+
+        <div class="about-chip">
+          <span class="chip-core">AI</span>
+          <strong>تبسيط المعرفة</strong>
+          <small>خبرة + أدوات + عرض أوضح</small>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="footer section-wrap">
-    <div class="footer-brand">
-      <div class="footer-logo">
-        <span class="brand-mark">NW</span>
-        <div>
-          <strong>NEXTWIRE</strong>
-          <small>Official Hub</small>
+  <footer class="site-footer">
+    <div class="footer-inner shell">
+      <section class="footer-brand">
+        <div class="footer-title-row">
+          <span class="footer-mark">
+            <img src="assets/brand-mark.svg" alt="" />
+          </span>
+          <div>
+            <h2 dir="ltr">NEXTWIRE</h2>
+            <p>منصة شخصية لمشاركة الخبرات والمحتوى التقني بصورة أبسط وأقرب.</p>
+          </div>
         </div>
-      </div>
-      <div class="footer-icons" id="footerIcons"></div>
-      <div class="site-url">🌐 <span>nextwire.dev</span></div>
-      <p>© 2024 NEXTWIRE. جميع الحقوق محفوظة.</p>
-    </div>
 
-    <div class="qr-panel">
-      <img src="assets/qr-nextwire.png" alt="QR Code NEXTWIRE" />
-      <h3>امسح الرمز</h3>
-      <p>للوصول السريع</p>
+        <div class="social-mini" id="miniLinks"></div>
+
+        <div class="footer-meta">
+          <span><i class="fa-solid fa-globe"></i> <bdi id="domainLabel">gradifysa.com</bdi></span>
+          <span>© <span id="year"></span> NEXTWIRE</span>
+        </div>
+      </section>
+
+      <section class="qr-card" aria-label="رمز الوصول السريع">
+        <div class="qr-shell">
+          <img src="assets/qr-nextwire.png" alt="رمز QR للوصول إلى الموقع" onerror="this.src='assets/qr-nextwire.svg'">
+        </div>
+        <h3>امسح الرمز</h3>
+        <p>للوصول السريع إلى الصفحة وروابط NEXTWIRE.</p>
+      </section>
     </div>
   </footer>
 
